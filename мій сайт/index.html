@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Стоматолог Олександр Гарновді | Ужгород</title>
+
+    <style>
+      /* ========================================== */
+      /* СУЧАСНІ ПРЕМІУМ СТИЛІ ТА ПІДСВІТКА */
+      /* ========================================== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;
+        color: #1a2530;
+        /* М'який свіжий фон із преміальним відтінком */
+        background: #f8fafb;
+        background-image: 
+          radial-gradient(circle at 10% 20%, rgba(46, 196, 182, 0.05) 0%, transparent 40%),
+          radial-gradient(circle at 90% 80%, rgba(46, 196, 182, 0.06) 0%, transparent 40%);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Шапка із скляним ефектом (Glassmorphism) */
+      header {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        padding: 18px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      }
+      .header-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a2530;
+        letter-spacing: -0.3px;
+      }
+      .logo span {
+        color: #2ec4b6;
+      }
+      .phone-btn {
+        color: #2ec4b6;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        background: rgba(46, 196, 182, 0.08);
+        border: 1px solid rgba(46, 196, 182, 0.3);
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+      }
+      .phone-btn:hover {
+        background-color: #2ec4b6;
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(46, 196, 182, 0.3);
+        transform: translateY(-1px);
+      }
+
+      /* Бейджі (Маленькі акцентні плашки) */
+      .badge {
+        display: inline-block;
+        padding: 6px 14px;
+        background: rgba(46, 196, 182, 0.12);
+        color: #1e968b;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 30px;
+        margin-bottom: 15px;
+        letter-spacing: 0.2px;
+      }
+
+      /* Головний блок (Hero) */
+      .hero {
+        padding: 80px 0;
+        position: relative;
+      }
+      .hero-flex {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+      .hero-text {
+        flex: 1;
+        min-width: 300px;
+      }
+      .hero-text h1 {
+        font-size: 44px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: #1a2530;
+        font-weight: 800;
+      }
+      .hero-text h1 span {
+        color: #2ec4b6;
+        position: relative;
+      }
+      .hero-text p {
+        font-size: 18px;
+        color: #52606d;
+        margin-bottom: 35px;
+      }
+
+      /* Кнопка з підсвіткою */
+      .cta-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #2ec4b6 0%, #22a397 100%);
+        color: #ffffff;
+        padding: 18px 36px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        box-shadow: 0 8px 25px rgba(46, 196, 182, 0.35);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(46, 196, 182, 0.45);
+      }
+
+      /* Рамка та світіння навколо фото лікаря */
+      .hero-img-container {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+        position: relative;
+      }
+      .hero-img {
+        max-width: 100%;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(26, 37, 48, 0.08);
+        border: 4px solid #ffffff;
+        transition: transform 0.4s ease;
+      }
+      .hero-img-container::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        height: 90%;
+        background: rgba(46, 196, 182, 0.2);
+        filter: blur(50px);
+        border-radius: 50%;
+        z-index: -1;
+      }
+
+      /* Секція послуг (Card Hover & Glow) */
+      .features {
+        padding: 90px 0;
+      }
+      .section-title {
+        text-align: center;
+        font-size: 34px;
+        font-weight: 800;
+        margin-bottom: 50px;
+        color: #1a2530;
+      }
+      .section-title span {
+        color: #2ec4b6;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+      .card {
+        background: #ffffff;
+        padding: 35px 28px;
+        border-radius: 20px;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      /* Підсвітка картки при наведенні */
+      .card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(46, 196, 182, 0.4);
+        box-shadow: 0 20px 35px rgba(46, 196, 182, 0.15);
+      }
+      .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #2ec4b6, #64dfdf);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .card:hover::before {
+        opacity: 1;
+      }
+      .card h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        color: #1a2530;
+        font-weight: 700;
+      }
+      .card p {
+        color: #606f7b;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      /* Секція форми Picasso (Виділений блок) */
+      .appointment-section {
+        padding: 90px 20px;
+      }
+      .appointment-container {
+        max-width: 620px;
+        margin: 0 auto;
+      }
+      .appointment-title {
+        font-size: 34px;
+        color: #1a2530;
+        text-align: center;
+        font-weight: 800;
+        margin-bottom: 12px;
+      }
+      .appointment-subtitle {
+        font-size: 16px;
+        color: #606f7b;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .picasso-card-form {
+        background: #ffffff;
+        padding: 45px 40px;
+        border-radius: 24px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(226, 232, 240, 0.8);
+        position: relative;
+      }
+      .picasso-input-group {
+        margin-bottom: 22px;
+      }
+      .picasso-field {
+        width: 100%;
+        padding: 18px 22px;
+        font-size: 16px;
+        background-color: #fcfdfe;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 12px;
+        color: #1a2530;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+      .picasso-field:focus {
+        outline: none;
+        border-color: #2ec4b6;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 4px rgba(46, 196, 182, 0.15);
+      }
+      .picasso-submit-btn {
+        width: 100%;
+        padding: 18px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #ffffff;
+        background: linear-gradient(135deg, #2ec4b6 0%, #22a397 100%);
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 6px 20px rgba(46, 196, 182, 0.3);
+      }
+      .picasso-submit-btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(46, 196, 182, 0.4);
+      }
+      .picasso-submit-btn:disabled {
+        background: #cbd5e1;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+
+      /* Секція контактів (Виділена картка) */
+      .contacts {
+        padding: 90px 0;
+      }
+      .contacts-card {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 40px;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      }
+      .contacts-flex {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+      }
+      .contacts-flex > div {
+        flex: 1;
+        min-width: 300px;
+      }
+      .clinic-img {
+        width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      }
+      .contacts-text h2 {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 25px;
+        color: #1a2530;
+      }
+      .contacts-item {
+        font-size: 17px;
+        margin-bottom: 18px;
+        color: #4a5568;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .map-link {
+        display: inline-block;
+        margin-top: 15px;
+        color: #2ec4b6;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 10px 20px;
+        background: rgba(46, 196, 182, 0.08);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+      .map-link:hover {
+        background: rgba(46, 196, 182, 0.18);
+        transform: translateX(4px);
+      }
+
+      /* Підвал */
+      footer {
+        background-color: #111827;
+        color: #9ca3af;
+        padding: 35px 0;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      @keyframes picassoFadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @media (max-width: 768px) {
+        .hero-text h1 { font-size: 32px; }
+        .hero { padding: 40px 0; }
+        .hero-flex, .contacts-flex { gap: 35px; }
+        .picasso-card-form { padding: 30px 20px; }
+        .contacts-card { padding: 25px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Шапка -->
+    <header>
+      <div class="container header-flex">
+        <div class="logo">Стоматолог <span>Олександр Гарновді</span></div>
+        <a href="tel:+380509181411" class="phone-btn">📞 +38 050 918 14 11</a>
+      </div>
+    </header>
+
+    <!-- Головний блок -->
+    <section class="hero">
+      <div class="container hero-flex">
+        <div class="hero-text">
+          <span class="badge">📍 Стоматологія в Ужгороді</span>
+          <h1>Здорова та впевнена <span>посмішка</span> без болю та стресу</h1>
+          <p>
+            Сучасна стоматологічна практика лікаря Олександра Гарновді.
+            Надійне лікування, хірургічна точність та індивідуальна турбота про кожного пацієнта.
+          </p>
+          <a href="#запис" class="cta-btn">Записатися на прийом</a>
+        </div>
+        <div class="hero-img-container">
+          <img
+            src="./doctor.jpg"
+            alt="Стоматолог Олександр Гарновді"
+            class="hero-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Напрямки лікування -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Напрямки <span>лікування</span></h2>
+        <div class="grid">
+          <div class="card">
+            <img src="./therapy.png" alt="Терапія" style="width: 48px; height: 48px; margin-bottom: 20px;" />
+            <h3>Терапія та ендодонтія</h3>
+            <p>Дбайливе лікування карієсу, надійне пломбування та безболісне лікування каналів.</p>
+          </div>
+          <div class="card">
+            <img src="./ortho.png" alt="Ортопедія" style="width: 48px; height: 48px; margin-bottom: 20px;" />
+            <h3>Ортопедія</h3>
+            <p>Відновлення форми та функцій зубного ряду за допомогою коронок, мостів та протезів.</p>
+          </div>
+          <div class="card">
+            <img src="./surgery.png" alt="Хірургія" style="width: 48px; height: 48px; margin-bottom: 20px;" />
+            <h3>Хірургія</h3>
+            <p>Безболісне та безпечне видалення зубів будь-якої складності, включаючи зуби мудрості.</p>
+          </div>
+          <div class="card">
+            <img src="./implant.png" alt="Імплантація" style="width: 48px; height: 48px; margin-bottom: 20px;" />
+            <h3>Імплантація</h3>
+            <p>Сучасне відновлення втрачених зубів за допомогою надійних біосумісних імплантатів.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секція запису -->
+    <section class="appointment-section" id="запис">
+      <div class="appointment-container">
+        <h2 class="appointment-title">Залишіть заявку на візит</h2>
+        <p class="appointment-subtitle">
+          Оберіть необхідний напрямок, і я зв'яжуся з вами для підтвердження зручного часу
+        </p>
+        
+        <div class="picasso-card-form" id="formWrapper">
+          <form id="dentalAppointmentForm">
+            <div class="picasso-input-group">
+              <input 
+                type="text" 
+                id="patientName"
+                class="picasso-field"
+                placeholder="Ваше ім'я" 
+                required 
+                minlength="2"
+              />
+            </div>
+            
+            <div class="picasso-input-group">
+              <input 
+                type="tel" 
+                id="patientPhone"
+                class="picasso-field"
+                placeholder="+380 (XX) XXX-XX-XX або міжнародний номер" 
+                required 
+              />
+            </div>
+            
+            <div class="picasso-input-group">
+              <select id="dentalService" class="picasso-field" required>
+                <option value="">Оберіть необхідну послугу</option>
+                <option value="Первинний огляд та консультація">Первинний огляд та консультація</option>
+                <option value="Лікування карієсу / каналів">Лікування карієсу / каналів</option>
+                <option value="Професійна гігієна та відбілювання">Професійна гігієна та відбілювання</option>
+                <option value="Протезування та коронки">Протезування та коронки</option>
+                <option value="Видалення зубів та хірургія">Видалення зубів та хірургія</option>
+                <option value="Імплантація зубів">Імплантація зубів</option>
+              </select>
+            </div>
+            
+            <button type="submit" id="submitBtn" class="picasso-submit-btn">Записатися на прийом</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакти -->
+    <section class="contacts">
+      <div class="container">
+        <div class="contacts-card">
+          <div class="contacts-flex">
+            <div>
+              <img src="./clinic.jpg" alt="Стоматологічний кабінет" class="clinic-img" />
+            </div>
+            <div class="contacts-text">
+              <h2>Як мене знайти?</h2>
+              <div class="contacts-item">
+                📍 <span><strong>Адреса:</strong> м. Ужгород, вулиця М. Заньковецької, 13</span>
+              </div>
+              <div class="contacts-item">
+                🚪 <span><strong>Орієнтир:</strong> Окремий зручний вхід з пандусом</span>
+              </div>
+              <div class="contacts-item">
+                🕒 <span><strong>Графік роботи:</strong> Пн — Пт: 09:00 - 18:00 (Сб: за записом)</span>
+              </div>
+              <a href="https://share.google/ufbXlSGkMMpgUmWN6" target="_blank" class="map-link">
+                🗺️ Прокласти маршрут на Google Картах →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Підвал -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Стоматолог Олександр Гарновді. м. Ужгород. Всі права захищені.</p>
+      </div>
+    </footer>
+
+    <!-- Скрипт відправки форми -->
+    <script>
+    document.getElementById('dentalAppointmentForm').addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        
+        const submitButton = document.getElementById('submitBtn');
+        const name = document.getElementById('patientName').value;
+        const phone = document.getElementById('patientPhone').value;
+        const service = document.getElementById('dentalService').value;
+        
+        submitButton.disabled = true;
+        submitButton.innerText = 'Обробка заявки...';
+
+        const formData = new FormData();
+        formData.append("Ім'я", name);
+        formData.append("Телефон", phone);
+        formData.append("Послуга", service);
+
+        fetch('https://script.google.com/macros/s/AKfycby2kPZFb1Wo8NpKikkdgQrHZCMkkaLYgNBTlziF5VNsQ9kj0q28LMw952OWC-bHtONugg/exec', {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors' 
+        })
+        .then(() => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-XXXXXXXXX/YYYYYYYYYYYYYYY', 
+                    'value': 1.0,
+                    'currency': 'UAH'
+                });
+            }
+
+            const formWrapper = document.getElementById('formWrapper');
+            formWrapper.innerHTML = `
+                <div style="text-align: center; padding: 20px 10px; animation: picassoFadeIn 0.6s ease forwards;">
+                    <div style="font-size: 56px; margin-bottom: 20px;">✨</div>
+                    <h3 style="color: #2ec4b6; font-size: 24px; margin-bottom: 12px; font-weight: 700;">Дякуємо за довіру, ${name}!</h3>
+                    <p style="color: #606f7b; font-size: 16px; line-height: 1.6; margin-bottom: 0;">
+                        Вашу заявку на послугу <strong>"${service}"</strong> успішно прийнято.<br>
+                        Я зв'яжуся з вами найближчим часом для підтвердження часу візиту.
+                    </p>
+                </div>
+            `;
+        })
+        .catch((error) => {
+            console.error('Помилка відправки:', error);
+            alert('Сталася помилка при відправці. Спробуйте ще раз або зателефонуйте нам.');
+            submitButton.disabled = false;
+            submitButton.innerText = 'Записатися на прийом';
+        });
+    });
+    </script>
+
+    <!-- Скрипт автопідстановки +380 для зручності -->
+    <script>
+      const phoneInput = document.getElementById('patientPhone');
+
+      phoneInput.addEventListener('focus', function() {
+        if (!phoneInput.value) {
+          phoneInput.value = '+380';
+        }
+      });
+
+      phoneInput.addEventListener('blur', function() {
+        if (phoneInput.value === '+380' || phoneInput.value === '+') {
+          phoneInput.value = '';
+        }
+      });
+    </script>
+
+  </body>
+</html>
