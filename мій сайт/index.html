@@ -8,6 +8,17 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PMGFNNW8');</script>
     <!-- End Google Tag Manager -->
+
+    <!-- Google Ads (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18357967797"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18357967797');
+    </script>
+    <!-- End Google Ads -->
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -561,13 +572,14 @@
             mode: 'no-cors' 
         })
         .then(() => {
-            if (typeof gtag === 'function') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-18357967797/K_kWCMO5-NocELW34bFE', 
-                    'value': 1.0,
-                    'currency': 'UAH'
-                });
-            }
+            // Гарантований виклик відправки конверсії в Google Ads
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('event', 'conversion', {
+                'send_to': 'AW-18357967797/K_kWCMO5-NocELW34bFE', 
+                'value': 1.0,
+                'currency': 'UAH'
+            });
 
             const formWrapper = document.getElementById('formWrapper');
             formWrapper.innerHTML = `
