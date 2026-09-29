@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="uk">
   <head>
-    <!-- Google Tag Manager (додано async) -->
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PMGFNNW8"></script>
+    <!-- Google Tag Manager -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -13,16 +10,6 @@
       })(window,document,'script','dataLayer','GTM-PMGFNNW8');
     </script>
     <!-- End Google Tag Manager -->
-
-    <!-- Google Ads (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18357967797"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-18357967797');
-    </script>
-    <!-- End Google Ads -->
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -180,6 +167,7 @@
         box-shadow: 0 20px 40px rgba(26, 37, 48, 0.08);
         border: 4px solid #ffffff;
         transition: transform 0.4s ease;
+        image-rendering: -webkit-optimize-contrast;
       }
       .hero-img-container::before {
         content: '';
@@ -458,8 +446,8 @@
                 src="doctor.jpg"
                 alt="Стоматолог Олександр Гарновді Ужгород"
                 class="hero-img"
-                width="500"
-                height="500"
+                width="800"
+                height="800"
                 fetchpriority="high"
                 loading="eager"
               />
