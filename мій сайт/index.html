@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="uk">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PMGFNNW8');</script>
+    <!-- Google Tag Manager (додано async) -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PMGFNNW8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PMGFNNW8');
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Google Ads (gtag.js) -->
@@ -15,7 +20,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'AW-18357967797');
     </script>
     <!-- End Google Ads -->
@@ -29,7 +33,7 @@
     <meta name="keywords" content="Стоматолог Ужгород, стоматологія Ужгород, Олександр Гарновді, імплантація зубів Ужгород, лікування зубів, протезування" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph (прев'ю посилання в месенджерах) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Стоматолог Олександр Гарновді в Ужгороді" />
     <meta property="og:description" content="Професійна стоматологічна допомога без болю та стресу. Запишіться на прийом онлайн." />
     <meta property="og:image" content="https://dr-harnovdi.com.ua/doctor.jpg" />
@@ -37,9 +41,6 @@
     <meta property="og:type" content="website" />
 
     <style>
-      /* ========================================== */
-      /* СУЧАСНІ ПРЕМІУМ СТИЛІ ТА ПІДСВІТКА */
-      /* ========================================== */
       * {
         box-sizing: border-box;
         margin: 0;
@@ -174,6 +175,7 @@
       }
       .hero-img {
         max-width: 100%;
+        height: auto;
         border-radius: 24px;
         box-shadow: 0 20px 40px rgba(26, 37, 48, 0.08);
         border: 4px solid #ffffff;
@@ -252,7 +254,6 @@
         line-height: 1.6;
       }
 
-      /* Секція форми запису */
       .appointment-section {
         padding: 90px 20px;
       }
@@ -345,6 +346,7 @@
       }
       .clinic-img {
         width: 100%;
+        height: auto;
         border-radius: 18px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.06);
       }
@@ -357,7 +359,7 @@
       .contacts-item {
         font-size: 17px;
         margin-bottom: 18px;
-        color: #4a5568;
+        color: #334155; /* Покращено контрастність */
         display: flex;
         align-items: center;
         gap: 10px;
@@ -365,23 +367,28 @@
       .map-link {
         display: inline-block;
         margin-top: 15px;
-        color: #2ec4b6;
+        color: #0d9488; /* Покращено контрастність */
         font-weight: 700;
         text-decoration: none;
         padding: 10px 20px;
-        background: rgba(46, 196, 182, 0.08);
+        background: rgba(46, 196, 182, 0.12);
         border-radius: 10px;
         transition: all 0.3s ease;
       }
       .map-link:hover {
-        background: rgba(46, 196, 182, 0.18);
+        background: rgba(46, 196, 182, 0.22);
         transform: translateX(4px);
+      }
+
+      /* Плаваюча кнопка дзвінка на мобільному */
+      .mobile-call-btn {
+        display: none;
       }
 
       footer {
         background-color: #111827;
         color: #9ca3af;
-        padding: 35px 0;
+        padding: 35px 0 80px 0; /* Додано відступ знизу під мобільну кнопку */
         text-align: center;
         font-size: 14px;
       }
@@ -397,6 +404,26 @@
         .hero-flex, .contacts-flex { gap: 35px; }
         .card-form { padding: 30px 20px; }
         .contacts-card { padding: 25px; }
+        
+        /* Показуємо закріплену кнопку тільки на смартфонах */
+        .mobile-call-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: fixed;
+          bottom: 15px;
+          left: 5%;
+          width: 90%;
+          height: 52px;
+          background: #25d366;
+          color: #ffffff;
+          font-size: 17px;
+          font-weight: 700;
+          text-decoration: none;
+          border-radius: 30px;
+          box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+          z-index: 9999;
+        }
       }
     </style>
   </head>
@@ -404,142 +431,152 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMGFNNW8"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Шапка -->
     <header>
       <div class="container header-flex">
         <div class="logo">Стоматолог <span>Олександр Гарновді</span></div>
-        <a href="tel:+380509181411" class="phone-btn">📞 +38 050 918 14 11</a>
+        <a href="tel:+380509181411" class="phone-btn" onclick="gtag('event', 'click_phone', {'event_category': 'contact'});">📞 +38 050 918 14 11</a>
       </div>
     </header>
 
-    <!-- Головний блок -->
-    <section class="hero">
-      <div class="container hero-flex">
-        <div class="hero-text">
-          <span class="badge">📍 Стоматологія в Ужгороді</span>
-          <h1>Стоматолог в Ужгороді <span>Олександр Гарновді</span></h1>
-          <p>
-            Сучасне та безболісне лікування зубів, хірургічна точність, імплантація та індивідуальна турбота про вашу посмішку.
+    <!-- ОСНОВНИЙ ВМІСТ СТОРІНКИ (ТЕГ MAIN) -->
+    <main>
+      <!-- Головний блок -->
+      <section class="hero">
+        <div class="container hero-flex">
+          <div class="hero-text">
+            <span class="badge">📍 Стоматологія в Ужгороді</span>
+            <h1>Стоматолог в Ужгороді <span>Олександр Гарновді</span></h1>
+            <p>
+              Сучасне та безболісне лікування зубів, хірургічна точність, імплантація та індивідуальна турбота про вашу посмішку.
+            </p>
+            <a href="#запис" class="cta-btn">Записатися на прийом</a>
+          </div>
+          <div class="hero-img-container">
+            <!-- Оптимізація LCP та усунення CLS (вказуємо width, height та fetchpriority) -->
+            <img
+              src="./doctor.jpg"
+              alt="Стоматолог Олександр Гарновді Ужгород"
+              class="hero-img"
+              width="500"
+              height="500"
+              fetchpriority="high"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Напрямки лікування -->
+      <section class="features">
+        <div class="container">
+          <h2 class="section-title">Напрямки <span>лікування</span></h2>
+          <div class="grid">
+            <div class="card">
+              <img src="./therapy.png" alt="Терапевтична стоматологія Ужгород" width="48" height="48" style="margin-bottom: 20px;" loading="lazy" />
+              <h3>Терапія та ендодонтія</h3>
+              <p>Дбайливе лікування карієсу, надійне пломбування та безболісне лікування каналів.</p>
+            </div>
+            <div class="card">
+              <img src="./ortho.png" alt="Ортопедія та коронки Ужгород" width="48" height="48" style="margin-bottom: 20px;" loading="lazy" />
+              <h3>Ортопедія</h3>
+              <p>Відновлення форми та функцій зубного ряду за допомогою коронок, мостів та протезів.</p>
+            </div>
+            <div class="card">
+              <img src="./surgery.png" alt="Хірургічна стоматологія Ужгород" width="48" height="48" style="margin-bottom: 20px;" loading="lazy" />
+              <h3>Хірургія</h3>
+              <p>Безболісне та безпечне видалення зубів будь-якої складності, включаючи зуби мудрості.</p>
+            </div>
+            <div class="card">
+              <img src="./implant.png" alt="Імплантація зубів Ужгород" width="48" height="48" style="margin-bottom: 20px;" loading="lazy" />
+              <h3>Імплантація</h3>
+              <p>Сучасне відновлення втрачених зубів за допомогою надійних біосумісних імплантатів.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секція запису -->
+      <section class="appointment-section" id="запис">
+        <div class="appointment-container">
+          <h2 class="appointment-title">Залишіть заявку на візит</h2>
+          <p class="appointment-subtitle">
+            Оберіть необхідний напрямок, і я зв'яжуся з вами для підтвердження зручного часу
           </p>
-          <a href="#запис" class="cta-btn">Записатися на прийом</a>
-        </div>
-        <div class="hero-img-container">
-          <img
-            src="./doctor.jpg"
-            alt="Стоматолог Олександр Гарновді Ужгород"
-            class="hero-img"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Напрямки лікування -->
-    <section class="features">
-      <div class="container">
-        <h2 class="section-title">Напрямки <span>лікування</span></h2>
-        <div class="grid">
-          <div class="card">
-            <img src="./therapy.png" alt="Терапевтична стоматологія Ужгород" style="width: 48px; height: 48px; margin-bottom: 20px;" />
-            <h3>Терапія та ендодонтія</h3>
-            <p>Дбайливе лікування карієсу, надійне пломбування та безболісне лікування каналів.</p>
-          </div>
-          <div class="card">
-            <img src="./ortho.png" alt="Ортопедія та коронки Ужгород" style="width: 48px; height: 48px; margin-bottom: 20px;" />
-            <h3>Ортопедія</h3>
-            <p>Відновлення форми та функцій зубного ряду за допомогою коронок, мостів та протезів.</p>
-          </div>
-          <div class="card">
-            <img src="./surgery.png" alt="Хірургічна стоматологія Ужгород" style="width: 48px; height: 48px; margin-bottom: 20px;" />
-            <h3>Хірургія</h3>
-            <p>Безболісне та безпечне видалення зубів будь-якої складності, включаючи зуби мудрості.</p>
-          </div>
-          <div class="card">
-            <img src="./implant.png" alt="Імплантація зубів Ужгород" style="width: 48px; height: 48px; margin-bottom: 20px;" />
-            <h3>Імплантація</h3>
-            <p>Сучасне відновлення втрачених зубів за допомогою надійних біосумісних імплантатів.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Секція запису -->
-    <section class="appointment-section" id="запис">
-      <div class="appointment-container">
-        <h2 class="appointment-title">Залишіть заявку на візит</h2>
-        <p class="appointment-subtitle">
-          Оберіть необхідний напрямок, і я зв'яжуся з вами для підтвердження зручного часу
-        </p>
-        
-        <div class="card-form" id="formWrapper">
-          <form id="dentalAppointmentForm">
-            <div class="input-group">
-              <input 
-                type="text" 
-                id="patientName"
-                class="form-field"
-                placeholder="Ваше ім'я" 
-                required 
-                minlength="2"
-              />
-            </div>
-            
-            <div class="input-group">
-              <input 
-                type="tel" 
-                id="patientPhone"
-                class="form-field"
-                placeholder="+380 (XX) XXX-XX-XX або міжнародний номер" 
-                required 
-              />
-            </div>
-            
-            <div class="input-group">
-              <select id="dentalService" class="form-field" required>
-                <option value="">Оберіть необхідну послугу</option>
-                <option value="Первинний огляд та консультація">Первинний огляд та консультація</option>
-                <option value="Лікування карієсу / каналів">Лікування карієсу / каналів</option>
-                <option value="Професійна гігієна та відбілювання">Професійна гігієна та відбілювання</option>
-                <option value="Протезування та коронки">Протезування та коронки</option>
-                <option value="Видалення зубів та хірургія">Видалення зубів та хірургія</option>
-                <option value="Імплантація зубів">Імплантація зубів</option>
-              </select>
-            </div>
-            
-            <button type="submit" id="submitBtn" class="submit-btn">Записатися на прийом</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Контакти -->
-    <section class="contacts">
-      <div class="container">
-        <div class="contacts-card">
-          <div class="contacts-flex">
-            <div>
-              <img src="./clinic.jpg" alt="Стоматологічний кабінет лікаря Гарновді в Ужгороді" class="clinic-img" />
-            </div>
-            <div class="contacts-text">
-              <h2>Як мене знайти?</h2>
-              <div class="contacts-item">
-                📍 <span><strong>Адреса:</strong> м. Ужгород, вулиця М. Заньковецької, 13</span>
+          
+          <div class="card-form" id="formWrapper">
+            <form id="dentalAppointmentForm">
+              <div class="input-group">
+                <input 
+                  type="text" 
+                  id="patientName"
+                  class="form-field"
+                  placeholder="Ваше ім'я" 
+                  required 
+                  minlength="2"
+                  aria-label="Ваше ім'я"
+                />
               </div>
-              <div class="contacts-item">
-                🚪 <span><strong>Орієнтир:</strong> Окремий зручний вхід з пандусом</span>
+              
+              <div class="input-group">
+                <input 
+                  type="tel" 
+                  id="patientPhone"
+                  class="form-field"
+                  placeholder="+380 (XX) XXX-XX-XX або міжнародний номер" 
+                  required 
+                  aria-label="Номер телефону"
+                />
               </div>
-              <div class="contacts-item">
-                🕒 <span><strong>Графік роботи:</strong> Пн — Пт: 09:00 - 18:00 (Сб: за записом)</span>
+              
+              <div class="input-group">
+                <!-- Додано aria-label для доступності -->
+                <select id="dentalService" class="form-field" required aria-label="Оберіть необхідну послугу">
+                  <option value="">Оберіть необхідну послугу</option>
+                  <option value="Первинний огляд та консультація">Первинний огляд та консультація</option>
+                  <option value="Лікування карієсу / каналів">Лікування карієсу / каналів</option>
+                  <option value="Професійна гігієна та відбілювання">Професійна гігієна та відбілювання</option>
+                  <option value="Протезування та коронки">Протезування та коронки</option>
+                  <option value="Видалення зубів та хірургія">Видалення зубів та хірургія</option>
+                  <option value="Імплантація зубів">Імплантація зубів</option>
+                </select>
               </div>
-              <a href="https://share.google/ufbXlSGkMMpgUmWN6" target="_blank" rel="noopener noreferrer" class="map-link">
-                🗺️ Прокласти маршрут на Google Картах →
-              </a>
+              
+              <button type="submit" id="submitBtn" class="submit-btn">Записатися на прийом</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Контакти -->
+      <section class="contacts">
+        <div class="container">
+          <div class="contacts-card">
+            <div class="contacts-flex">
+              <div>
+                <img src="./clinic.jpg" alt="Стоматологічний кабінет лікаря Гарновді в Ужгороді" class="clinic-img" width="500" height="350" loading="lazy" />
+              </div>
+              <div class="contacts-text">
+                <h2>Як мене знайти?</h2>
+                <div class="contacts-item">
+                  📍 <span><strong>Адреса:</strong> м. Ужгород, вулиця М. Заньковецької, 13</span>
+                </div>
+                <div class="contacts-item">
+                  🚪 <span><strong>Орієнтир:</strong> Окремий зручний вхід з пандусом</span>
+                </div>
+                <div class="contacts-item">
+                  🕒 <span><strong>Графік роботи:</strong> Пн — Пт: 09:00 - 18:00 (Сб: за записом)</span>
+                </div>
+                <a href="https://share.google/ufbXlSGkMMpgUmWN6" target="_blank" rel="noopener noreferrer" class="map-link">
+                  🗺️ Прокласти маршрут на Google Картах →
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- Підвал -->
     <footer>
@@ -547,6 +584,11 @@
         <p>&copy; 2026 Стоматолог Олександр Гарновді. м. Ужгород. Всі права захищені.</p>
       </div>
     </footer>
+
+    <!-- Плаваюча кнопка швидкого дзвінка для мобільних пристроїв -->
+    <a href="tel:+380509181411" class="mobile-call-btn" onclick="gtag('event', 'click_phone', {'event_category': 'contact'});">
+      📞 Зателефонувати зараз
+    </a>
 
     <!-- Скрипт відправки форми -->
     <script>
@@ -572,7 +614,6 @@
             mode: 'no-cors' 
         })
         .then(() => {
-            // Гарантований виклик відправки конверсії в Google Ads
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('event', 'conversion', {
@@ -602,7 +643,7 @@
     });
     </script>
 
-    <!-- Скрипт автопідстановки +380 для зручності -->
+    <!-- Скрипт автопідстановки +380 -->
     <script>
       const phoneInput = document.getElementById('patientPhone');
 
@@ -618,6 +659,5 @@
         }
       });
     </script>
-
   </body>
 </html>
